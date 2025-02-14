@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Checker</title>
+</head>
+<body>
+    <h2>Enter Reference Number</h2>
+    <form method="post">
+        <input type="text" name="reference_number" placeholder="Enter 14-digit Reference Number" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+    <h3>Bill Details</h3>
+    <p><b>Units Consumed:</b> {{ result.units_consumed }}</p>
+    <p><b>Payable Amount:</b> {{ result.payable_amount }}</p>
+    {% endif %}
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
