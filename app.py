@@ -12,13 +12,6 @@ app = Flask(__name__)
 
 # 🛠️ Install Chrome (Only if not already installed)
 CHROME_PATH = "/usr/bin/google-chrome"
-if not os.path.exists(CHROME_PATH):
-    subprocess.run([
-        "apt-get", "update"
-    ], check=True)
-    subprocess.run([
-        "apt-get", "install", "-y", "google-chrome-stable"
-    ], check=True)
 
 def fetch_bill_details(reference_number):
     options = Options()
